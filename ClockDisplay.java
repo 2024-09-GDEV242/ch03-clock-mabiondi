@@ -17,6 +17,7 @@ public class ClockDisplay
     private NumberDisplay hours;
     private NumberDisplay minutes;
     private String displayString;    // simulates the actual display
+    private boolean isPM;
     
     /**
      * Constructor for ClockDisplay objects. This constructor 
@@ -24,8 +25,9 @@ public class ClockDisplay
      */
     public ClockDisplay()
     {
-        hours = new NumberDisplay(24);
+        hours = new NumberDisplay(12);
         minutes = new NumberDisplay(60);
+        isPM = false;
         updateDisplay();
     }
 
@@ -34,11 +36,11 @@ public class ClockDisplay
      * creates a new clock set at the time specified by the 
      * parameters.
      */
-    public ClockDisplay(int hour, int minute)
+    public ClockDisplay(int hour, int minute, boolean isPM)
     {
-        hours = new NumberDisplay(24);
+        hours = new NumberDisplay(12);
         minutes = new NumberDisplay(60);
-        setTime(hour, minute);
+        setTime(hour, minute, isPM);
     }
 
     /**
@@ -58,10 +60,11 @@ public class ClockDisplay
      * Set the time of the display to the specified hour and
      * minute.
      */
-    public void setTime(int hour, int minute)
+    public void setTime(int hour, int minute, boolean isPM)
     {
         hours.setValue(hour);
         minutes.setValue(minute);
+        this.isPM = isPM;
         updateDisplay();
     }
 
@@ -78,7 +81,16 @@ public class ClockDisplay
      */
     private void updateDisplay()
     {
+        String ampm;
+        if(isPM == true)
+        {
+            ampm = "PM";
+        }
+        else
+        {
+            ampm = "AM";
+        }
         displayString = hours.getDisplayValue() + ":" + 
-                        minutes.getDisplayValue();
+                        minutes.getDisplayValue() + ampm;
     }
 }
