@@ -21,7 +21,7 @@ public class ClockDisplay
     
     /**
      * Constructor for ClockDisplay objects. This constructor 
-     * creates a new clock set at 00:00.
+     * creates a new clock set at 12:00 AM.
      */
     public ClockDisplay()
     {
@@ -60,8 +60,8 @@ public class ClockDisplay
     }
 
     /**
-     * Set the time of the display to the specified hour and
-     * minute.
+     * Set the time of the display to the specified hour,
+     * minute and period in the day.
      */
     public void setTime(int hour, int minute, boolean isPM)
     {
@@ -72,7 +72,7 @@ public class ClockDisplay
     }
 
     /**
-     * Return the current time of this display in the format HH:MM.
+     * Return the current time of this display in the format HH:MM AM/PM.
      */
     public String getTime()
     {
