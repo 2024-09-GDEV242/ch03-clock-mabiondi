@@ -1,8 +1,8 @@
 
 /**
  * The ClockDisplay class implements a digital clock display for a
- * European-style 24 hour clock. The clock shows hours and minutes. The 
- * range of the clock is 00:00 (midnight) to 23:59 (one minute before 
+ * American-style 12 hour clock. The clock shows hours and minutes. The 
+ * range of the clock is 12:00 AM (midnight) to 11:59 PM (one minute before 
  * midnight).
  * 
  * The clock display receives "ticks" (via the timeTick method) every minute
