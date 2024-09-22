@@ -79,13 +79,22 @@ public class ClockDisplay
     private void updateDisplay()
     {
         String ampm;
+        int adjustedHour;
+        
         if(hours.getValue() / 12 == 0) {
             ampm = "AM";
         }
         else {
             ampm = "PM";
         }
-        displayString = hours.getDisplayValue() + ":" + 
+        
+        if(hours.getValue() % 12 == 0) {
+            adjustedHour = 12;
+        }
+        else {
+            adjustedHour = hours.getValue();
+        }
+        displayString = adjustedHour + ":" + 
                         minutes.getDisplayValue() + " " + ampm;
     }
 }
