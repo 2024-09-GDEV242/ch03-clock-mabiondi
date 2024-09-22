@@ -94,6 +94,6 @@ public class ClockDisplay
             ampm = "AM";
         }
         displayString = (hours.getValue() + 1) + ":" + 
-                        minutes.getDisplayValue() + ampm;
+                        minutes.getDisplayValue() + " " + ampm;
     }
 }
