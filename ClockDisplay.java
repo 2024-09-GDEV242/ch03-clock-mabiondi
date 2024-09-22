@@ -52,7 +52,7 @@ public class ClockDisplay
         minutes.increment();
         if(minutes.getValue() == 0) {  // it just rolled over!
             hours.increment();
-            if (hours.getValue() == 12) {
+            if (hours.getValue() == 11) {
                 isPM = !isPM;
             }
         }
@@ -65,7 +65,7 @@ public class ClockDisplay
      */
     public void setTime(int hour, int minute, boolean isPM)
     {
-        hours.setValue(hour);
+        hours.setValue(hour - 1);
         minutes.setValue(minute);
         this.isPM = isPM;
         updateDisplay();
@@ -93,7 +93,7 @@ public class ClockDisplay
         {
             ampm = "AM";
         }
-        displayString = hours.getDisplayValue() + ":" + 
+        displayString = (hours.getValue() + 1) + ":" + 
                         minutes.getDisplayValue() + ampm;
     }
 }
